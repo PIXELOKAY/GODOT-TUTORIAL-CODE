@@ -3,8 +3,7 @@ extends CharacterBody3D
 
 const MAX_VERTICAL_LOOK_ANGLE: int = 89
 
-const WALK_SPEED: float = 3.5
-const SPRINT_SPEED: float = 7.5
+const WALK_SPEED: float = 6.5
 
 const AIR_ACCELERATION: float = 0.25
 const GROUND_ACCELERATION: float = 1.0
@@ -55,10 +54,10 @@ func _physics_process(delta) -> void :
 	
 	if move_direction:
 		velocity.x = lerp(velocity.x, move_direction.x * current_speed, delta * current_speed * current_acceleration)
-		velocity.z = lerp(velocity.x, move_direction.z * current_speed, delta * current_speed * current_acceleration)
+		velocity.z = lerp(velocity.z, move_direction.z * current_speed, delta * current_speed * current_acceleration)
 	else:
 		velocity.x = lerp(velocity.x, 0.0, delta * current_speed * current_deceleration)
-		velocity.z = lerp(velocity.x, 0.0, delta * current_speed * current_deceleration)
+		velocity.z = lerp(velocity.z, 0.0, delta * current_speed * current_deceleration)
 	
 	player_gravity(delta)
 	move_and_slide()
