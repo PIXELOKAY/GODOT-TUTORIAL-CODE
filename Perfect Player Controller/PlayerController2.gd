@@ -48,8 +48,8 @@ func _unhandled_key_input(_event) -> void:
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		velocity.y = jump_velocity
 
-func _physics_process(delta) -> void :
-	var input_direction = Input.get_vector("MoveLeft", "MoveRight", "MoveForward", "MoveBackward")
+func _physics_process(delta) -> void:
+	var input_direction = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 	var move_direction = (transform.basis * Vector3(input_direction.x, 0 , input_direction.y)).normalized()
 	
 	if move_direction:
