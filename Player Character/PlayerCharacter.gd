@@ -41,6 +41,7 @@ func _input(event: InputEvent) -> void:
 		rotate_y(deg_to_rad(-event.relative.x * mouse_sensitivity))
 		player_head.rotate_x(deg_to_rad(-event.relative.y * mouse_sensitivity))
 		player_head.rotation.x = clamp(player_head.rotation.x, deg_to_rad(-MAX_VERTICAL_LOOK_ANGLE), deg_to_rad(MAX_VERTICAL_LOOK_ANGLE))
+	
 	if Input.is_action_just_pressed("quit"):
 		get_tree().quit()
 	
